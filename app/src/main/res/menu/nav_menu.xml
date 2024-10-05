@@ -4,17 +4,17 @@
     <item
         android:id="@+id/nav_item1"
         android:icon="@drawable/ic_book"
-        android:title="Libro" />
+        android:title="Tareas" />
 
     <item
         android:id="@+id/nav_item2"
         android:icon="@drawable/ic_check"
-        android:title="Chulo" />
+        android:title="Tareas Hechas" />
 
     <item
         android:id="@+id/nav_item3"
         android:icon="@drawable/ic_reset"
-        android:title="Reset" />
+        android:title="Tareas Pendientes" />
 
     <item
         android:id="@+id/nav_item4"
@@ -23,5 +23,5 @@
 
     <item
         android:id="@+id/action_logout"
-        android:title="Cerrar sesión" />
+        android:title="Cerrar Aplicación" />
 </menu>

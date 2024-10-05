@@ -6,7 +6,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <!-- Estilo sin la barra de acción -->
     <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/light_blue</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

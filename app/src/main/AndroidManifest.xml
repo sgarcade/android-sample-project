@@ -12,6 +12,7 @@
         android:theme="@style/AppTheme.NoActionBar"
         tools:targetApi="31">
         <activity
+
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
@@ -21,6 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AddTaskActivity" />
+        <activity android:name=".TaskListActivity"></activity>
+        <activity android:name=".CompletedTasksActivity"></activity>
+        <activity android:name=".PendingTasksActivity"></activity>
+        <activity android:name=".SettingsActivity"></activity>
+
     </application>
 
 </manifest>

@@ -1,7 +1,8 @@
 package com.david.taskmaster
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -16,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
@@ -30,26 +30,39 @@ class MainActivity : AppCompatActivity() {
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
+
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.nav_item1 -> {
-                    // Acción para el ítem 1
+                    val intent = Intent(this, TaskListActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 R.id.nav_item2 -> {
-                    // Acción para el ítem 2
+                    startActivity(Intent(this, CompletedTasksActivity::class.java))
                     true
                 }
                 R.id.nav_item3 -> {
-                    // Acción para el ítem 3
+                    startActivity(Intent(this, PendingTasksActivity::class.java))
+                    true
+                }
+                R.id.nav_item4 -> {
+                    startActivity(Intent(this, SettingsActivity::class.java))
                     true
                 }
                 R.id.action_logout -> {
-                    // Acción para cerrar sesión
+                    finish()
                     true
                 }
                 else -> false
             }
+        }
+
+        val buttonAddTask = findViewById<Button>(R.id.buttonAddTask)
+        buttonAddTask.setOnClickListener {
+
+            val intent = Intent(this, AddTaskActivity::class.java)
+            startActivity(intent)
         }
     }
 }
