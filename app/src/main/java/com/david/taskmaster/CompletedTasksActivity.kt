@@ -1,5 +1,6 @@
 package com.david.taskmaster
 
+
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +33,7 @@ class CompletedTasksActivity : AppCompatActivity() {
     }
 
     private fun loadCompletedTasks() {
+
         completedTaskList.apply {
             add(Task("Ir al gimnasio", "Hacer una rutina de ejercicios", "02/10/2024", true))
             add(Task("Reunión de trabajo", "Preparar la presentación para la reunión", "04/10/2024", true))
