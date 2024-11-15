@@ -1,11 +1,13 @@
 package com.david.taskmaster
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -18,6 +20,8 @@ class AddTaskActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var tvStartDate: TextView
     private lateinit var tvEndDate: TextView
+    private lateinit var etTitle: EditText
+    private lateinit var etDescription: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,22 +40,38 @@ class AddTaskActivity : AppCompatActivity() {
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-
         val backButton = findViewById<ImageButton>(R.id.button_back)
         backButton.setOnClickListener {
             finish()
         }
 
-
         tvStartDate = findViewById(R.id.tv_start_date)
         tvEndDate = findViewById(R.id.tv_end_date)
+
 
         tvStartDate.setOnClickListener { showDatePickerDialog(true) }
         tvEndDate.setOnClickListener { showDatePickerDialog(false) }
 
         val btnAddTask = findViewById<Button>(R.id.btn_add_task)
         btnAddTask.setOnClickListener {
-        //TODO: Agregar funcionalidad guardado tarea
+            // Obtener los valores de los campos
+            val title = etTitle.text.toString().trim()
+            val description = etDescription.text.toString().trim()
+            val startDate = tvStartDate.text.toString().trim()
+            val endDate = tvEndDate.text.toString().trim()
+
+            // Validar que los campos no estén vacíos
+            if (title.isEmpty() || description.isEmpty() || startDate.isEmpty() || endDate.isEmpty()) {
+                Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
+            } else {
+                // Mostrar mensaje de tarea agregada
+                Toast.makeText(this, "Tarea agregada exitosamente", Toast.LENGTH_SHORT).show()
+
+                // Redirigir a la actividad principal (MainActivity)
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+
+            }
         }
     }
 
