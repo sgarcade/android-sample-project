@@ -43,80 +43,101 @@
 
         </androidx.appcompat.widget.Toolbar>
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingTop="16dp"
-            android:paddingHorizontal="24dp"
-            android:paddingVertical="100dp">
+            android:layout_below="@id/toolbar"
+            android:padding="16dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Título de la tarea:"
-                android:textSize="16sp" />
-
-            <EditText
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Escribe el título de la tarea" />
+                android:orientation="vertical"
+                android:paddingHorizontal="24dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Descripción de la tarea:"
-                android:textSize="16sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Título de la tarea:"
+                    android:textSize="16sp" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Escribe la descripción de la tarea"
-                android:layout_marginBottom="24dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Escribe el título de la tarea" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Fecha de inicio:"
-                android:textSize="16sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Descripción de la tarea:"
+                    android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/tv_start_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Selecciona la fecha de inicio"
-                android:padding="12dp"
-                android:background="?attr/selectableItemBackground"
-                android:layout_marginBottom="16dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Escribe la descripción de la tarea"
+                    android:layout_marginBottom="24dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Fecha de fin:"
-                android:textSize="16sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Fecha de inicio:"
+                    android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/tv_end_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Selecciona la fecha de fin"
-                android:padding="12dp"
-                android:background="?attr/selectableItemBackground"
-                android:layout_marginBottom="24dp" />
+                <TextView
+                    android:id="@+id/tv_start_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Selecciona la fecha de inicio"
+                    android:padding="12dp"
 
-            <Button
-                android:id="@+id/btn_add_task"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:backgroundTint="?attr/colorPrimary"
-                android:textColor="@android:color/white"
-                android:text="Agregar Tarea" />
+                    android:layout_marginBottom="16dp" />
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Fecha de fin:"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_end_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Selecciona la fecha de fin"
+                    android:padding="12dp"
+
+                    android:layout_marginBottom="24dp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_pending"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pendiente"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_notify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notificar"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="24dp" />
+
+                <Button
+                    android:id="@+id/btn_add_task"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="?attr/colorPrimary"
+                    android:textColor="@android:color/white"
+                    android:text="Agregar Tarea" />
+
+            </LinearLayout>
+        </ScrollView>
 
     </RelativeLayout>
 
@@ -128,4 +149,3 @@
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu" />
 </androidx.drawerlayout.widget.DrawerLayout>
-

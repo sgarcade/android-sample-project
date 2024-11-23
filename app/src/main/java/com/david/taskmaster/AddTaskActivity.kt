@@ -49,25 +49,28 @@ class AddTaskActivity : AppCompatActivity() {
         tvEndDate = findViewById(R.id.tv_end_date)
 
 
+
+
+
         tvStartDate.setOnClickListener { showDatePickerDialog(true) }
         tvEndDate.setOnClickListener { showDatePickerDialog(false) }
 
         val btnAddTask = findViewById<Button>(R.id.btn_add_task)
         btnAddTask.setOnClickListener {
-            // Obtener los valores de los campos
+
             val title = etTitle.text.toString().trim()
             val description = etDescription.text.toString().trim()
             val startDate = tvStartDate.text.toString().trim()
             val endDate = tvEndDate.text.toString().trim()
 
-            // Validar que los campos no estén vacíos
+
             if (title.isEmpty() || description.isEmpty() || startDate.isEmpty() || endDate.isEmpty()) {
                 Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
             } else {
-                // Mostrar mensaje de tarea agregada
+
                 Toast.makeText(this, "Tarea agregada exitosamente", Toast.LENGTH_SHORT).show()
 
-                // Redirigir a la actividad principal (MainActivity)
+                
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
 

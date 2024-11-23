@@ -26,6 +26,9 @@ class TaskAdapter(private val taskList: List<Task>) : RecyclerView.Adapter<TaskA
         holder.dateTextView.text = task.date
     }
 
+
+
+
     override fun getItemCount(): Int {
         return taskList.size
     }
